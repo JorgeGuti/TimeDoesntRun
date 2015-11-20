@@ -32,7 +32,7 @@ public void oculta_menu(){
 } 
 	public void Empezar (){
 		Time.timeScale = 1f;		
-		Application.LoadLevel ("Nivel 04");
+		Application.LoadLevel ("Nivel04");
 		}
 	public void SiguienteNivel (){
 		Time.timeScale = 1f;		
