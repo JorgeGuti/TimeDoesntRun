@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class movimiento : MonoBehaviour {
-
+	private Animator anim;
 	public float fuerza = 200f;
 	public float velocidad_edgar = 5f;
 	Rigidbody2D rg; //Esto es para usar el rigidbody del objeto
@@ -43,7 +43,7 @@ public class movimiento : MonoBehaviour {
 	void salto(){
 				Debug.Log ("Salta");
 				rg.AddForce (new Vector2 (0, fuerza)); // Añadimos una fuerza
-
+		        anim = GetComponent<Animator>();
 		}
 
 	void mueve_derecha(){
