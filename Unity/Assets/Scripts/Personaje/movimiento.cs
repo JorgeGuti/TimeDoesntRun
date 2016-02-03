@@ -5,6 +5,8 @@ public class movimiento : MonoBehaviour {
 	private Animator anim;
 	public float fuerza = 200f;
 	public float velocidad_edgar = 8f;
+	bool pulsado_boton_dch = false;
+	bool pulsado_boton_izq = false;
 	Rigidbody2D rg; //Esto es para usar el rigidbody del objeto
 	Vector3 mira_izquierda = new Vector3(1,1,1);
 	Vector3 mira_derecha = new Vector3 (-1,1,1);
@@ -26,10 +28,10 @@ public class movimiento : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.Space)){
 			salto ();
 			}
-		if (Input.GetKey (KeyCode.A)) {
+		if (Input.GetKey (KeyCode.A) || pulsado_boton_izq) {
 			mueve_izquierda ();
 				}
-		if(Input.GetKey(KeyCode.D)) {
+		if(Input.GetKey(KeyCode.D)|| pulsado_boton_dch) {
 			mueve_derecha();
 		}
 	
@@ -46,15 +48,33 @@ public class movimiento : MonoBehaviour {
 		        anim = GetComponent<Animator>();
 		}
 
-	public void mueve_derecha(){
+	void mueve_derecha(){
 		transform.localScale = mira_derecha;
 		rg.AddForce(new Vector2(velocidad_edgar,0));
 
 
 	}
 
-	public void mueve_izquierda(){
+	void mueve_izquierda(){
 		transform.localScale = mira_izquierda;
 		rg.AddForce(new Vector2(-velocidad_edgar,0));
 		}
+
+	public void pulsa_boton_dch(){
+		pulsado_boton_dch = true;
+	}
+
+	public void suelta_boton_dch(){
+		pulsado_boton_dch = false;
+	}
+
+	public void pulsa_boton_izq(){
+		pulsado_boton_izq = true;
+
+	}
+
+	public void suelta_boton_izq(){
+		pulsado_boton_izq = false;
+
+}
 }
