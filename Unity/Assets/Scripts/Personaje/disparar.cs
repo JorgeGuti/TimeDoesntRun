@@ -23,8 +23,8 @@ public class disparar : MonoBehaviour {
 	public void disparo(){
 		nuevabala = (GameObject)Instantiate(bala,puntoDisparo.position, puntoDisparo.rotation);
 		rb = nuevabala.GetComponent<Rigidbody2D>();
-		nuevabala.transform.localScale = transform.localScale;
-		rb.AddForce ( transform.right * velocidad );
+
+		rb.AddForce ( transform.right * velocidad *transform.localScale.x * -1 );
 
 	}
 
