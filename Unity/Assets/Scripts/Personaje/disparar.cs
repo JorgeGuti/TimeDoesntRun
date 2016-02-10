@@ -7,7 +7,9 @@ public class disparar : MonoBehaviour {
 	public Transform puntoDisparo;
 	bool pulsando_boton_dispara= false;
 	bool solo_un_disparo = true;
-
+	public float velocidad = 200f;
+	Rigidbody2D rb;
+	private GameObject nuevabala;
 
 	 void Update(){
 
@@ -19,7 +21,10 @@ public class disparar : MonoBehaviour {
 			
 
 	public void disparo(){
-		Instantiate(bala,puntoDisparo.position, puntoDisparo.rotation);
+		nuevabala = (GameObject)Instantiate(bala,puntoDisparo.position, puntoDisparo.rotation);
+		rb = nuevabala.GetComponent<Rigidbody2D>();
+		nuevabala.transform.localScale = transform.localScale;
+		rb.AddForce ( transform.right * velocidad );
 
 	}
 
