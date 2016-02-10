@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections;
 
 public class Herir : MonoBehaviour {
@@ -36,3 +36,4 @@ public class Herir : MonoBehaviour {
 	}
 
 }
+ */

@@ -8,8 +8,8 @@ public class bala : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
-		rb.AddForce (transform.forward * 100);
-		Destroy (gameObject, 3);
+		rb.AddForce (transform.right * 100f * velocidad * -1);
+		Destroy (gameObject, 3f);
 	}
 
 }
