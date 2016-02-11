@@ -1,7 +1,7 @@
-/*using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class Herir : MonoBehaviour {
+public class Quitavidas : MonoBehaviour {
 
 	public int puntos = 5;
 	public float cadencia = 1f;
@@ -20,20 +20,20 @@ public class Herir : MonoBehaviour {
 			proximo_hit = Time.time + cadencia;
 		}
 	}
-
+	
 	void OnTriggerEnter(Collider2D objeto){
 		if(objeto.tag == "Player"){
 			//Debug.Log("Entra Player");
 			dentro_area = true;
 		}
 	}
-
+	
 	void OnTriggerExit2d(Collider2D objeto){
 		if(objeto.tag == "Player"){
 			//Debug.Log("Entra Player");
 			dentro_area = false;
 		}
 	}
-
+	
 }
- */
+*/
