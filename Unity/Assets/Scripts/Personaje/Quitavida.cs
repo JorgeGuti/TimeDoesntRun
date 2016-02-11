@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Quitavidas : MonoBehaviour {
+public class Quitavida : MonoBehaviour {
 
 	public int puntos = 5;
 	public float cadencia = 1f;
