@@ -69,6 +69,10 @@ public class GameControl : MonoBehaviour {
 		Application.LoadLevel(PlayerPrefs.GetString("Level"));
     }
 
+	public void resta(){
+
+	}
+
 
 
 }

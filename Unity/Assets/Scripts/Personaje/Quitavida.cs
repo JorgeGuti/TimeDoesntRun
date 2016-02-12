@@ -16,7 +16,7 @@ public class Quitavida : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if( (proximo_hit < Time.time) && dentro_area){
-			gc.resta_vida(puntos);
+			//gc.resta_vida(puntos);
 			proximo_hit = Time.time + cadencia;
 		}
 	}
@@ -36,4 +36,3 @@ public class Quitavida : MonoBehaviour {
 	}
 	
 }
-*/
