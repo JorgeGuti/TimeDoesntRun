@@ -4,14 +4,15 @@ using System.Collections;
 
 public class Vida : MonoBehaviour {
 
-	public int max_vida = 100;
+	public int max_vida = 3;
 	public int vida;
-	Slider barravida;
+	Text Textovida;
 
 	// Use this for initialization
 	void Start () {
 		vida = max_vida;
-		barravida = GameObject.Find("BarraVida").GetComponent<Slider>();
+		Textovida = GameObject.Find("Textovida").GetComponent<Text>();
+		Textovida.text =""+ vida;
 	
 	}
 
@@ -20,7 +21,7 @@ public class Vida : MonoBehaviour {
 		if(vida<0){
 			vida = 0;
 		}
-		barravida.value = vida;
+		Textovida.text =""+ vida;
 	}
 	
 	// Update is called once per frame
