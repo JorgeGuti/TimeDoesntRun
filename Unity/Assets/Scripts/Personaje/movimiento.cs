@@ -10,6 +10,7 @@ public class movimiento : MonoBehaviour {
 	Rigidbody2D rg; //Esto es para usar el rigidbody del objeto
 	Vector3 mira_izquierda = new Vector3(1,1,1);
 	Vector3 mira_derecha = new Vector3 (-1,1,1);
+	public ControlSuelo CS;
 		// Use this for initialization
 	void Start () {
 		rg = GetComponent<Rigidbody2D> ();// Cargamos el rigidbody dentro de
@@ -43,22 +44,21 @@ public class movimiento : MonoBehaviour {
 	 */
 
 	public void salto(){
-				Debug.Log ("Salta");
-				rg.AddForce (new Vector2 (0, fuerza)); // Añadimos una fuerza
-		        anim = GetComponent<Animator>();
-		}
+		Debug.Log ("Salta");
+		rg.AddForce (new Vector2 (0, fuerza)); // Añadimos una fuerza
+        anim = GetComponent<Animator>();
+		//CS.Saber_Suelo ();
+	}
 
 	void mueve_derecha(){
 		transform.localScale = mira_derecha;
 		rg.AddForce(new Vector2(velocidad_edgar,0));
-
-
 	}
 
 	void mueve_izquierda(){
 		transform.localScale = mira_izquierda;
 		rg.AddForce(new Vector2(-velocidad_edgar,0));
-		}
+	}
 
 	public void pulsa_boton_dch(){
 		pulsado_boton_dch = true;
@@ -76,5 +76,5 @@ public class movimiento : MonoBehaviour {
 	public void suelta_boton_izq(){
 		pulsado_boton_izq = false;
 
-}
+	}
 }
