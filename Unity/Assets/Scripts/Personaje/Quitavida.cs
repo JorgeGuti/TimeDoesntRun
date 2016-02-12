@@ -1,39 +1,24 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Quitavida : MonoBehaviour {
 
 	public int puntos = 5;
-	public float cadencia = 1f;
-	float proximo_hit = 0;
-	bool dentro_area = false;
-	GameControl gc;
+	Vida gc;
 	// Use this for initialization
 	void Start () {
-		gc = GameObject.Find("GameControl").GetComponent<GameControl>();
+		gc = GameObject.Find("GameControl").GetComponent<Vida>();
 	}
+		// Update is called once per frame
+
 	
-	// Update is called once per frame
-	void Update () {
-		if( (proximo_hit < Time.time) && dentro_area){
-			//gc.resta_vida(puntos);
-			proximo_hit = Time.time + cadencia;
-		}
-	}
-	
-	void OnTriggerEnter(Collider2D objeto){
+	void OnTriggerEnter2D(Collider2D objeto){
 		if(objeto.tag == "Player"){
 			//Debug.Log("Entra Player");
-			dentro_area = true;
+			gc.resta_vida(puntos);
 		}
 	}
 	
-	void OnTriggerExit2d(Collider2D objeto){
-		if(objeto.tag == "Player"){
-			//Debug.Log("Entra Player");
-			dentro_area = false;
-		}
-	}
+
 	
 }
-*/
