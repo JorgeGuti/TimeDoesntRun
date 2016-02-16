@@ -7,6 +7,7 @@ public class checkpoint : MonoBehaviour {
 		Debug.Log ("Trriger Enter");
 		if (objeto.transform.tag == "Player") {
 			PlayerPrefs.SetString("Checkpoint",transform.name);
+			PlayerPrefs.SetString("Level",Application.loadedLevelName);
 			Debug.Log ("Checkpoint " + transform.name);
 		}
 	}
