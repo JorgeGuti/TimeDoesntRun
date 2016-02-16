@@ -64,8 +64,8 @@ public class GameControl : MonoBehaviour {
     public void restart()
     {
         //PlayerPrefs.SetInt("Puntos", 0);
-		PlayerPrefs.SetString("Level", "Nivel04");
-		PlayerPrefs.SetString("Checkpoint", "CH4_0");
+		PlayerPrefs.SetString("Level", "Nivel01");
+		PlayerPrefs.SetString("Checkpoint", "CH1_0");
 		Application.LoadLevel(PlayerPrefs.GetString("Level"));
     }
 
