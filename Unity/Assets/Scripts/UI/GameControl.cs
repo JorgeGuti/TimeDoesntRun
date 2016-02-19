@@ -17,7 +17,7 @@ public class GameControl : MonoBehaviour {
 			PlayerPrefs.SetInt("Puntos", 0);
 		}
 
-		score = PlayerPrefs.GetInt("Puntos");
+		//score = PlayerPrefs.GetInt("Puntos");
 
 
 		if (!PlayerPrefs.HasKey("Level")) {
@@ -32,7 +32,7 @@ public class GameControl : MonoBehaviour {
 		
 		checkpoint = PlayerPrefs.GetString ("Checkpoint");
 		level = PlayerPrefs.GetString ("Level");
-        text = GameObject.Find("Puntos").GetComponent<Text>();
+		//text = GameObject.Find("Puntos").GetComponent<Text>();
 
 		player = GameObject.FindGameObjectWithTag("Player");
 
@@ -53,13 +53,13 @@ public class GameControl : MonoBehaviour {
 	  
 	}
 
-    public void cambiaPuntos(int puntos)
-    {
-        score = PlayerPrefs.GetInt("Puntos");
-        score = score + puntos;
-       PlayerPrefs.SetInt("Puntos", score);
-        text.text = "" + score;
-    }
+   // public void cambiaPuntos(int puntos)
+	//{
+        //score = PlayerPrefs.GetInt("Puntos");
+	//score = score + puntos;
+	//PlayerPrefs.SetInt("Puntos", score);
+	//text.text = "" + score;
+	// }
 
     public void restart()
     {
