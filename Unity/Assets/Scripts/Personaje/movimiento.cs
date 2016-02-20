@@ -25,6 +25,7 @@ public class movimiento : MonoBehaviour {
 	
 
 		if(Input.GetKeyDown(KeyCode.Space)){
+			an.SetBool("Saltando", true);
 			salto ();
 		}
 
@@ -39,6 +40,11 @@ public class movimiento : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
 			an.SetFloat("Velocidad", 0.0f);
 		}
+
+		if (CS.Saber_Suelo () == false) {
+			Debug.Log("Dentro");
+			an.SetBool("Saltando", false);
+		}
 	}
 
 
@@ -50,7 +56,6 @@ public class movimiento : MonoBehaviour {
 		Debug.Log ("Salta");
 		rg.AddForce (new Vector2 (0, fuerza)); // Añadimos una fuerza
         anim = GetComponent<Animator>();
-		//CS.Saber_Suelo ();
 	}
 
 	void mueve_derecha(){
