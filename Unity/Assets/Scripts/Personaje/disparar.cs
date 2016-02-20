@@ -3,13 +3,14 @@ using System.Collections;
 
 public class disparar : MonoBehaviour {
 	
-	public GameObject bala;
+	public GameObject[] bala;
 	public Transform puntoDisparo;
 	bool pulsando_boton_dispara= false;
 	bool solo_un_disparo = true;
 	public float velocidad = 200f;
 	Rigidbody2D rb;
 	private GameObject nuevabala;
+	private int contador = 0;
 
 	 void Update(){
 
@@ -21,7 +22,11 @@ public class disparar : MonoBehaviour {
 			
 
 	public void disparo(){
-		nuevabala = (GameObject)Instantiate(bala,puntoDisparo.position, puntoDisparo.rotation);
+		nuevabala = (GameObject)Instantiate(bala[contador],puntoDisparo.position, puntoDisparo.rotation);
+		contador += 1;
+		if (contador > 3) {
+			contador = 0;
+		}
 		rb = nuevabala.GetComponent<Rigidbody2D>();
 
 		rb.AddForce ( transform.right * velocidad *transform.localScale.x * -1 );

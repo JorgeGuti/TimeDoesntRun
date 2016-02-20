@@ -42,7 +42,6 @@ public class movimiento : MonoBehaviour {
 		}
 
 		if (CS.Saber_Suelo () == false) {
-			Debug.Log("Dentro");
 			an.SetBool("Saltando", false);
 		}
 	}
