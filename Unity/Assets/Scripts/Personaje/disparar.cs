@@ -11,10 +11,13 @@ public class disparar : MonoBehaviour {
 	Rigidbody2D rb;
 	private GameObject nuevabala;
 	private int contador = 0;
+	public Animator an;
+	public int Tiempo_Espera = 5;
+	bool permitido = true;
 
 	 void Update(){
 
-		if(Input.GetKeyDown(KeyCode.Q) || (pulsando_boton_dispara && solo_un_disparo) ) { 
+		if((Input.GetKeyDown(KeyCode.Q) || (pulsando_boton_dispara && solo_un_disparo)) && permitido ) { 
 			disparo ();
 			solo_un_disparo = false;
 		}
@@ -24,8 +27,10 @@ public class disparar : MonoBehaviour {
 	public void disparo(){
 		nuevabala = (GameObject)Instantiate(bala[contador],puntoDisparo.position, puntoDisparo.rotation);
 		contador += 1;
+		an.SetInteger ("Estado", contador);
 		if (contador > 3) {
-			contador = 0;
+			permitido = false;
+			StartCoroutine ("TiempoEspera");
 		}
 		rb = nuevabala.GetComponent<Rigidbody2D>();
 
@@ -44,5 +49,11 @@ public class disparar : MonoBehaviour {
 		solo_un_disparo = true;
 	}
 
+	IEnumerator TiempoEspera (){
+		yield return new WaitForSeconds (Tiempo_Espera);
+		contador = 0;
+		an.SetInteger ("Estado", contador);
+		permitido = true;
+	}
 
 }

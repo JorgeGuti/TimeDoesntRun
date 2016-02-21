@@ -4,7 +4,7 @@ using System.Collections;
 public class checkpoint : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D objeto){
-		Debug.Log ("Trriger Enter");
+		Debug.Log ("Triger Enter");
 		if (objeto.transform.tag == "Player") {
 			PlayerPrefs.SetString("Checkpoint",transform.name);
 			PlayerPrefs.SetString("Level",Application.loadedLevelName);
