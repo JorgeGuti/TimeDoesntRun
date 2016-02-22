@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 354b25b2f662d774298af55624858f81
+guid: 84170cf04c01af44d9cbc4f3b14d4e8e
+timeCreated: 1456161324
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: base 4_0
-    21300002: base 4_1
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,18 +22,23 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  allowsAlphaSplitting: 0
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -44,26 +49,8 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: base 4_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 804
-        height: 810
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: base 4_1
-      rect:
-        serializedVersion: 2
-        x: 1159
-        y: 0
-        width: 633
-        height: 940
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
