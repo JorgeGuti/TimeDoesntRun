@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class movimiento : MonoBehaviour {
-	private Animator anim;
 	public float fuerza = 200f;
 	public float velocidad_edgar = 8f;
 	bool pulsado_boton_dch = false;
@@ -56,7 +55,6 @@ public class movimiento : MonoBehaviour {
 	public void salto(){
 		//Debug.Log ("Salta");
 		rg.AddForce (new Vector2 (0, fuerza)); // Añadimos una fuerza
-        anim = GetComponent<Animator>();
 		Debug.Log ("saltando ahora");
 		otro_salto = false;
 	}
