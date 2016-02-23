@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class movimiento : MonoBehaviour {
-	private Animator anim;
 	public float fuerza = 200f;
 	public float velocidad_edgar = 8f;
 	bool pulsado_boton_dch = false;
@@ -25,7 +24,7 @@ public class movimiento : MonoBehaviour {
 		Debug.DrawLine(transform.position, new Vector3(transform.position.x + velocidad.x, transform.position.y + velocidad.y, transform.position.z));
 	
 
-		if(Input.GetKeyDown(KeyCode.Space) && otro_salto == false){ //es true
+		if(Input.GetKeyDown(KeyCode.Space) && otro_salto == true){
 			an.SetBool("Saltando", true);
 			salto ();
 		}
@@ -56,7 +55,6 @@ public class movimiento : MonoBehaviour {
 	public void salto(){
 		//Debug.Log ("Salta");
 		rg.AddForce (new Vector2 (0, fuerza)); // Añadimos una fuerza
-        anim = GetComponent<Animator>();
 		Debug.Log ("saltando ahora");
 		otro_salto = false;
 	}
