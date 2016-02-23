@@ -13,7 +13,6 @@ public class movimiento : MonoBehaviour {
 	public ControlSuelo CS;
 	public Animator an;
 	bool otro_salto = true;
-	int cuenta_salto = 0;
 		// Use this for initialization
 	void Start () {
 		rg = GetComponent<Rigidbody2D> ();// Cargamos el rigidbody dentro de
@@ -26,7 +25,7 @@ public class movimiento : MonoBehaviour {
 		Debug.DrawLine(transform.position, new Vector3(transform.position.x + velocidad.x, transform.position.y + velocidad.y, transform.position.z));
 	
 
-		if(Input.GetKeyDown(KeyCode.Space) && otro_salto){
+		if(Input.GetKeyDown(KeyCode.Space) && otro_salto == true){
 			an.SetBool("Saltando", true);
 			salto ();
 		}
@@ -43,10 +42,9 @@ public class movimiento : MonoBehaviour {
 			an.SetFloat("Velocidad", 0.0f);
 		}
 
-		if (CS.Saber_Suelo () == false) {
+		if (CS.Saber_Suelo () == true) {
 			an.SetBool("Saltando", false);
 			otro_salto = true;
-			cuenta_salto = 0;
 		}
 	}
 
@@ -56,13 +54,11 @@ public class movimiento : MonoBehaviour {
 	 */
 
 	public void salto(){
-		Debug.Log ("Salta");
-		cuenta_salto += 1;
+		//Debug.Log ("Salta");
 		rg.AddForce (new Vector2 (0, fuerza)); // Añadimos una fuerza
         anim = GetComponent<Animator>();
-		if(cuenta_salto == 2){
-			otro_salto = false;
-		}
+		Debug.Log ("saltando ahora");
+		otro_salto = false;
 	}
 
 	void mueve_derecha(){
