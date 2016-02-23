@@ -25,7 +25,7 @@ public class movimiento : MonoBehaviour {
 		Debug.DrawLine(transform.position, new Vector3(transform.position.x + velocidad.x, transform.position.y + velocidad.y, transform.position.z));
 	
 
-		if(Input.GetKeyDown(KeyCode.Space) && otro_salto == true){
+		if(Input.GetKeyDown(KeyCode.Space) && otro_salto == false){ //es true
 			an.SetBool("Saltando", true);
 			salto ();
 		}
