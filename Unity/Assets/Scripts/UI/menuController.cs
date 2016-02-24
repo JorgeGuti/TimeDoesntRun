@@ -29,6 +29,7 @@ public void muestra_menu(){
 public void oculta_menu(){
 	Time.timeScale = 1f;
 	anim.SetBool("MuestraMenu",false);
+		Debug.Log("Oculta");
 } 
 	public void Empezar (){
 		Time.timeScale = 1f;		
