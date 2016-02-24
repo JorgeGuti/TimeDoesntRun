@@ -9,6 +9,7 @@ public class buhoEnemigo2 : MonoBehaviour {
 		private float startTime;
 		private float journeyLength;
 		public bool veo_a_edgar = false;
+	    public Animator an;
 		void Start() {
 			startTime = Time.time;
 			journeyLength = Vector3.Distance(buho.position, jugador.position);
