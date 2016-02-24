@@ -3,7 +3,8 @@ using System.Collections;
 
 public class troncopodrido : MonoBehaviour {
 
-	public string nombre = "player";
+	public string nombre = "Player";
+	public int Tiempo_Espera = 5;
 	private Rigidbody2D rb;
 
 	// Use this for initialization
@@ -16,7 +17,7 @@ public class troncopodrido : MonoBehaviour {
 	void Update () {
 	
 	}
-	void OnTriggerEnter2D (Collider2D objeto){
+	void OnCollisionEnter2D (Collision2D objeto){
 		string etiqueta = objeto.transform.tag;
 		Debug.Log (etiqueta);
 		if (etiqueta == nombre) {
