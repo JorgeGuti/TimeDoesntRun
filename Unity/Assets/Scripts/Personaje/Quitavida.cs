@@ -12,8 +12,8 @@ public class Quitavida : MonoBehaviour {
 		// Update is called once per frame
 
 	
-	void OnTriggerEnter2D(Collider2D objeto){
-		if(objeto.tag == "Player"){
+	void OnCollisionEnter2D(Collision2D objeto){
+		if(objeto.transform.tag == "Player"){
 			//Debug.Log("Entra Player");
 			gc.resta_vida(puntos);
 		}
