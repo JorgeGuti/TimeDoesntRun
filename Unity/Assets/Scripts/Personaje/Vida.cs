@@ -23,7 +23,15 @@ public class Vida : MonoBehaviour {
 		}
 		Textovida.text =""+ vida;
 	}
-	
+
+	public void suma_vida(int puntos){//que sume vida al tocar el item al player
+		vida = vida + puntos;
+		if(vida>0){
+			vida = 0;
+		}
+		Textovida.text =""+ vida;
+	}
+
 	// Update is called once per frame
 	void Update () {
 	
