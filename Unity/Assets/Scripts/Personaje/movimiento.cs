@@ -12,7 +12,8 @@ public class movimiento : MonoBehaviour {
 	public ControlSuelo CS;
 	public Animator an;
 	bool otro_salto = true;
-		// Use this for initialization
+
+
 	void Start () {
 		rg = GetComponent<Rigidbody2D> ();// Cargamos el rigidbody dentro de
 	}
@@ -26,7 +27,7 @@ public class movimiento : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.Space) && otro_salto == true){
 			an.SetBool("Saltando", true);
-			salto ();
+			salto();
 		}
 
 		if (Input.GetKey (KeyCode.A) || pulsado_boton_izq) {
@@ -43,7 +44,11 @@ public class movimiento : MonoBehaviour {
 
 		if (CS.Saber_Suelo () == true) {
 			an.SetBool("Saltando", false);
-			otro_salto = true;
+			Debug.Log ("tocosuelo");
+			if(otro_salto == false){
+				Debug.Log ("ahora");
+				otro_salto = true;
+			}
 		}
 	}
 
@@ -53,22 +58,20 @@ public class movimiento : MonoBehaviour {
 	 */
 
 	public void salto(){
-		//Debug.Log ("Salta");
-		rg.AddForce (new Vector2 (0, fuerza)); // Añadimos una fuerza
-		Debug.Log ("saltando ahora");
+		rg.AddForce (new Vector2 (0, fuerza));
 		otro_salto = false;
 	}
 
 	void mueve_derecha(){
 		transform.localScale = mira_derecha;
-		rg.AddForce(new Vector2(velocidad_edgar,0));
-		an.SetFloat("Velocidad", velocidad_edgar);
+		rg.AddForce (new Vector2(velocidad_edgar,0));
+		an.SetFloat ("Velocidad", velocidad_edgar);
 	}
 
 	void mueve_izquierda(){
 		transform.localScale = mira_izquierda;
-		rg.AddForce(new Vector2(-velocidad_edgar,0));
-		an.SetFloat("Velocidad", velocidad_edgar);
+		rg.AddForce (new Vector2(-velocidad_edgar,0));
+		an.SetFloat ("Velocidad", velocidad_edgar);
 	}
 
 	public void pulsa_boton_dch(){
