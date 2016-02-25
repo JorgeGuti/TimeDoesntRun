@@ -23,6 +23,9 @@ public class troncopodrido : MonoBehaviour {
 			Debug.Log (etiqueta);
 			StartCoroutine ("TiempoEspera");
 		}
+		if (etiqueta == "Limite") {
+			Destroy(gameObject);
+		}
 	}
 
 	IEnumerator TiempoEspera (){
