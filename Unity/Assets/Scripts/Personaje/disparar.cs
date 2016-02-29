@@ -14,6 +14,9 @@ public class disparar : MonoBehaviour {
 	public Animator an;
 	public int Tiempo_Espera = 5;
 	bool permitido = true;
+	public movimiento mov;
+	Vector3 mira_izquierda = new Vector3 (-1,1,1);
+	Vector3 mira_derecha = new Vector3 (1,1,1);
 
 	 void Update(){
 
@@ -34,7 +37,15 @@ public class disparar : MonoBehaviour {
 		}
 		rb = nuevabala.GetComponent<Rigidbody2D>();
 
-		rb.AddForce ( transform.right * velocidad *transform.localScale.x * -1 );
+		if (mov.direccion () == true) {
+			rb.transform.localScale = mira_derecha;
+			rb.AddForce ( transform.right * velocidad * transform.localScale.x * -1 );
+		}
+
+		else{
+			rb.transform.localScale = mira_izquierda;
+			rb.AddForce ( transform.right * velocidad * transform.localScale.x * -1 );
+		}
 
 	}
 

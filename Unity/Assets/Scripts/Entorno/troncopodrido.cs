@@ -20,7 +20,7 @@ public class troncopodrido : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D objeto){
 		string etiqueta = objeto.transform.tag;
 		if (etiqueta == nombre) {
-			Debug.Log (etiqueta);
+			//Debug.Log (etiqueta);
 			StartCoroutine ("TiempoEspera");
 		}
 		if (etiqueta == "Limite") {

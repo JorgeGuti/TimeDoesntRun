@@ -6,6 +6,7 @@ public class movimiento : MonoBehaviour {
 	public float velocidad_edgar = 8f;
 	bool pulsado_boton_dch = false;
 	bool pulsado_boton_izq = false;
+	bool derecha = false;
 	Rigidbody2D rg; //Esto es para usar el rigidbody del objeto
 	Vector3 mira_izquierda = new Vector3(1,1,1);
 	Vector3 mira_derecha = new Vector3 (-1,1,1);
@@ -64,12 +65,14 @@ public class movimiento : MonoBehaviour {
 
 	void mueve_derecha(){
 		transform.localScale = mira_derecha;
+		derecha = true;
 		rg.AddForce (new Vector2(velocidad_edgar,0));
 		an.SetFloat ("Velocidad", velocidad_edgar);
 	}
 
 	void mueve_izquierda(){
 		transform.localScale = mira_izquierda;
+		derecha = false;
 		rg.AddForce (new Vector2(-velocidad_edgar,0));
 		an.SetFloat ("Velocidad", velocidad_edgar);
 	}
@@ -88,5 +91,9 @@ public class movimiento : MonoBehaviour {
 
 	public void suelta_boton_izq(){
 		pulsado_boton_izq = false;
+	}
+
+	public bool direccion(){
+		return derecha;
 	}
 }

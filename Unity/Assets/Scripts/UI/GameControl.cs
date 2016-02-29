@@ -41,10 +41,10 @@ public class GameControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
        
-		if (checkpoint != "CH1_0") {
+		/*if (checkpoint != "CH1_0") {
 
 			player.transform.position = GameObject.Find(checkpoint).transform.position;
-		}
+		}*/
 
 	}
 	
@@ -61,22 +61,21 @@ public class GameControl : MonoBehaviour {
 	//text.text = "" + score;
 	// }
 
-    public void restart()
-    {
+    /*public void restart(){
         PlayerPrefs.SetInt("Puntos", 0);
 		PlayerPrefs.SetString("Level", "Nivel01");
 		PlayerPrefs.SetString("Checkpoint", "CH1_0");
 		Application.LoadLevel(PlayerPrefs.GetString("Level"));
     }
-	public void continuar()
-	{
+
+	public void continuar(){
 		PlayerPrefs.SetInt("Puntos", 0);
 		Application.LoadLevel(PlayerPrefs.GetString("Level"));
 	}
 
 	public void resta(){
 
-	}
+	}*/
 
 
 

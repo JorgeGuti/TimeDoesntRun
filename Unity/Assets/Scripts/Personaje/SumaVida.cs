@@ -18,12 +18,7 @@ public class SumaVida : MonoBehaviour {
 			gc.suma_vida(puntos);
 			Destroy(gameObject);
 
-
 		}
 	}
-
-	
-	
-	
 }
 
