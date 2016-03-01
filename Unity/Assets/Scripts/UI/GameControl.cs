@@ -61,7 +61,7 @@ public class GameControl : MonoBehaviour {
 	//text.text = "" + score;
 	// }
 
-    /*public void restart(){
+    public void reiniciar(){
         PlayerPrefs.SetInt("Puntos", 0);
 		PlayerPrefs.SetString("Level", "Nivel01");
 		PlayerPrefs.SetString("Checkpoint", "CH1_0");
@@ -73,9 +73,13 @@ public class GameControl : MonoBehaviour {
 		Application.LoadLevel(PlayerPrefs.GetString("Level"));
 	}
 
+	public void salir (){
+		Application.LoadLevel ("Inicio");
+	}
+
 	public void resta(){
 
-	}*/
+	}
 
 
 

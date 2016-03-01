@@ -15,33 +15,38 @@ public class menuController : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.Escape)){
 			if(anim.GetBool("MuestraMenu")==false){
 				muestra_menu();
-		}else{
-				oculta_menu();
 			}
+		
+			else{
+					oculta_menu();
+			}
+		}
+ 	}
+
+
+	public void muestra_menu(){
+		Time.timeScale = 0;
+		anim.SetBool("MuestraMenu",true);
 	}
- }
 
+	public void oculta_menu(){
+		Time.timeScale = 1f;
+		anim.SetBool("MuestraMenu",false);
+			Debug.Log("Oculta");
+	} 
 
-public void muestra_menu(){
-	Time.timeScale = 0;
-	anim.SetBool("MuestraMenu",true);
-}
-public void oculta_menu(){
-	Time.timeScale = 1f;
-	anim.SetBool("MuestraMenu",false);
-		Debug.Log("Oculta");
-} 
 	public void Empezar (){
 		Time.timeScale = 1f;		
 		Application.LoadLevel ("Nivel04");
-		}
+	}
+
 	public void SiguienteNivel (){
 		Time.timeScale = 1f;		
 		Application.LoadLevel ("Nivel05");
 	}
 
 	public void Salir(){
-				Application.Quit ();
-		}
+		Application.Quit ();
+	}
 
 }
