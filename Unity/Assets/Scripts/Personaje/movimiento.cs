@@ -59,21 +59,21 @@ public class movimiento : MonoBehaviour {
 	 */
 
 	public void salto(){
-		rg.AddForce (new Vector2 (0, fuerza));
+		rg.velocity = new Vector2 (rg.velocity.x, fuerza);
 		otro_salto = false;
 	}
 
 	void mueve_derecha(){
 		transform.localScale = mira_derecha;
 		derecha = true;
-		rg.AddForce (new Vector2(velocidad_edgar,0));
+		rg.velocity = new Vector2 (velocidad_edgar,rg.velocity.y);
 		an.SetFloat ("Velocidad", velocidad_edgar);
 	}
 
 	void mueve_izquierda(){
 		transform.localScale = mira_izquierda;
 		derecha = false;
-		rg.AddForce (new Vector2(-velocidad_edgar,0));
+		rg.velocity = new Vector2 (-velocidad_edgar, rg.velocity.y);
 		an.SetFloat ("Velocidad", velocidad_edgar);
 	}
 
