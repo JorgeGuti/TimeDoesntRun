@@ -26,6 +26,10 @@ public class troncopodrido : MonoBehaviour {
 		if (etiqueta == "Limite") {
 			Destroy(gameObject);
 		}
+
+		if(objeto.transform.tag == "pinchos"){
+			Destroy(gameObject);
+		}
 	}
 
 	IEnumerator TiempoEspera (){
