@@ -17,12 +17,13 @@ public class disparar : MonoBehaviour {
 	public movimiento mov;
 	Vector3 mira_izquierda = new Vector3 (-1,1,1);
 	Vector3 mira_derecha = new Vector3 (1,1,1);
+	public Animator an_personaje;
 
 	 void Update(){
 
-		if((Input.GetKeyDown(KeyCode.Q) || (pulsando_boton_dispara && solo_un_disparo)) && permitido ) { 
-			disparo ();
-			solo_un_disparo = false;
+		if((Input.GetKeyDown(KeyCode.Q) || (pulsando_boton_dispara && solo_un_disparo)) && permitido ) {
+			an_personaje.SetBool ("Disparar", true);
+			Invoke ("vuelta_normal", 0.4f);
 		}
 	}
 			
@@ -46,7 +47,6 @@ public class disparar : MonoBehaviour {
 			rb.transform.localScale = mira_izquierda;
 			rb.AddForce ( transform.right * velocidad * transform.localScale.x * -1 );
 		}
-
 	}
 
 	public void  pulsa_dispara(){
@@ -65,6 +65,12 @@ public class disparar : MonoBehaviour {
 		contador = 0;
 		an.SetInteger ("Estado", contador);
 		permitido = true;
+	}
+
+	void vuelta_normal(){
+		an_personaje.SetBool ("Disparar", false);
+		disparo();
+		solo_un_disparo = false;
 	}
 
 }
