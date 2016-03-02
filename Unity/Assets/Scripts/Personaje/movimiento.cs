@@ -12,7 +12,8 @@ public class movimiento : MonoBehaviour {
 	Vector3 mira_derecha = new Vector3 (-1,1,1);
 	public ControlSuelo CS;
 	public Animator an;
-	bool otro_salto = true;
+	//bool otro_salto = true;
+	public LayerMask capa;
 
 
 	void Start () {
@@ -26,9 +27,10 @@ public class movimiento : MonoBehaviour {
 		Debug.DrawLine(transform.position, new Vector3(transform.position.x + velocidad.x, transform.position.y + velocidad.y, transform.position.z));
 	
 
-		if(Input.GetKeyDown(KeyCode.Space) && otro_salto == true){
-			an.SetBool("Saltando", true);
+		if(Input.GetKeyDown(KeyCode.Space)){ //&& otro_salto == true
 			salto();
+			an.SetBool("Saltando", true);
+			Invoke("TerminaSalto",1f);
 		}
 
 		if (Input.GetKey (KeyCode.A) || pulsado_boton_izq) {
@@ -43,14 +45,14 @@ public class movimiento : MonoBehaviour {
 			an.SetFloat("Velocidad", 0.0f);
 		}
 
-		if (CS.Saber_Suelo () == true) {
+		/*if (CS.Saber_Suelo () == true) {
 			an.SetBool("Saltando", false);
 			Debug.Log ("tocosuelo");
 			if(otro_salto == false){
 				Debug.Log ("ahora");
 				otro_salto = true;
 			}
-		}
+		}*/
 	}
 
 
@@ -59,8 +61,11 @@ public class movimiento : MonoBehaviour {
 	 */
 
 	public void salto(){
-		rg.velocity = new Vector2 (rg.velocity.x, fuerza);
-		otro_salto = false;
+		RaycastHit2D hitdown = Physics2D.Raycast(transform.position, -transform.up, 1, capa);
+		if (hitdown.collider != null) { // si es diferente de nulo y cumple las variables de el rayo puede hacer eso
+			rg.velocity = new Vector2 (rg.velocity.x, fuerza);
+			//otro_salto = false;
+		}
 	}
 
 	void mueve_derecha(){
@@ -95,5 +100,9 @@ public class movimiento : MonoBehaviour {
 
 	public bool direccion(){
 		return derecha;
+	}
+
+	void TerminaSalto(){
+		an.SetBool("Saltando", false);
 	}
 }
