@@ -18,6 +18,7 @@ public class buhoEnemigo2 : MonoBehaviour {
 			an = GetComponent<Animator>();
 			an_ala = transform.Find("alalante").GetComponent<Animator>();
 		}
+
 		void Update() {
 			if(veo_a_edgar){
 				float distCovered = (Time.time - startTime) * velocidad;
@@ -39,12 +40,18 @@ public class buhoEnemigo2 : MonoBehaviour {
 		
 
 		void OnTriggerExit2D(Collider2D objeto){
-		if(objeto.transform.tag == "Player"){
-			veo_a_edgar = false;
+			if(objeto.transform.tag == "Player"){
+				veo_a_edgar = false;
+			}
+			an.SetBool("ataque", false);
+			an_ala.SetBool("ataque", false);
 		}
-		an.SetBool("ataque", false);
-		an_ala.SetBool("ataque", false);
-		
+
+		void OnCollisionEnter2D (Collision2D objeto){
+			if(objeto.transform.tag == "bala"){
+				Destroy(gameObject);
+				Destroy (objeto.gameObject);
+			}
 		}
 	}
 

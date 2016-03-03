@@ -11,10 +11,10 @@ public class bala : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D objeto){
-		if(objeto.transform.tag == "enemigo"){
+		/*if(objeto.transform.tag == "enemigo"){
 			Destroy(gameObject);
 			Destroy (objeto.gameObject);
-		}
+		}*/
 
 		if((objeto.transform.tag == "danio")||(objeto.transform.tag == "Base")||(objeto.transform.tag == "Limite")){
 			Destroy(gameObject);
