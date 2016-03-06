@@ -12,7 +12,7 @@ public class menuController2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(Input.GetKeyDown(KeyCode.Escape)){
+		if((Input.GetKeyDown(KeyCode.Escape))||(Input.GetKeyDown(KeyCode.Menu))){
 			if(anim.GetBool("MuestraMenu")==false){
 				muestra_menu();
 			}
