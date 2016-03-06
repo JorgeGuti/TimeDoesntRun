@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class menuController : MonoBehaviour {
-	private Animator anim; 
+	private Animator anim;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
@@ -12,7 +12,7 @@ public class menuController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		if(Input.GetKeyDown(KeyCode.Escape)){
+		if((Input.GetKeyDown(KeyCode.Escape))||(Input.GetKeyDown(KeyCode.Menu))){
 			if(anim.GetBool("MuestraMenu")==false){
 				muestra_menu();
 			}
@@ -20,6 +20,7 @@ public class menuController : MonoBehaviour {
 			else{
 					oculta_menu();
 			}
+		
 		}
  	}
 

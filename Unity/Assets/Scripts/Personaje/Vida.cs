@@ -19,9 +19,11 @@ public class Vida : MonoBehaviour {
 	public void resta_vida(int puntos){//que reste vida al tocar el enemigo al player
 		vida = vida - puntos;
 		if(vida < 0){
-			//Aqui se pone que recarge el nivel
+			Application.LoadLevel (PlayerPrefs.GetString ("Level"));
 		}
-		Textovida.text = "" + vida;
+		else{
+			Textovida.text = "" + vida;
+		}
 	}
 
 	public void suma_vida(int puntos){ //que sume vida al tocar el item al player
