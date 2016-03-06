@@ -46,7 +46,11 @@ public class PayasoEnemigo : MonoBehaviour {
 		}
 		an.SetBool("ataque", false);
 		an_rueda.SetBool("ataque", false);
-
-		
+		}
+	void OnCollisionEnter2D (Collision2D objeto){
+		if(objeto.transform.tag == "bala"){
+			Destroy(gameObject);
+			Destroy (objeto.gameObject);
+		}
 	}
 }
