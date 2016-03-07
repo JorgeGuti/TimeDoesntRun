@@ -82,6 +82,8 @@ public class GameControl3 : MonoBehaviour {
 
 	}
 
-
+	public void exit (){
+		Application.Quit();
+	}
 
 }
