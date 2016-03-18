@@ -13,7 +13,6 @@ public class movimiento : MonoBehaviour {
 	public ControlSuelo CS;
 	public Animator an;
 	bool otro_salto = true;
-	public LayerMask capa;
 
 
 	void Start () {
@@ -85,6 +84,7 @@ public class movimiento : MonoBehaviour {
 
 	public void suelta_boton_dch(){
 		pulsado_boton_dch = false;
+		an.SetFloat("Velocidad", 0.0f);
 	}
 
 	public void pulsa_boton_izq(){
@@ -93,6 +93,15 @@ public class movimiento : MonoBehaviour {
 
 	public void suelta_boton_izq(){
 		pulsado_boton_izq = false;
+		an.SetFloat("Velocidad", 0.0f);
+	}
+
+	public void pulsa_boton_salto(){
+		if(otro_salto == true){
+			salto();
+			an.SetBool("Saltando", true);
+			Invoke("TerminaSalto",0.3f);
+		}
 	}
 
 	public bool direccion(){
